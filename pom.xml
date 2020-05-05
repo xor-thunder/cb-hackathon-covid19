@@ -78,7 +78,6 @@
 		<plugin><!-- don't pack the war  -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				 <version>3.2.2</version>
 				<executions>
 					<!-- <execution>
 						<id>default-war</id>
@@ -91,9 +90,9 @@
 							<archiveClasses>true</archiveClasses>
 						</configuration>
 						<phase>prepare-package</phase>
-						<!-- <goals>
+						<goals>
 							<goal>exploded</goal>
-						</goals> -->
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
