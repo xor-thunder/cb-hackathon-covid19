@@ -12,6 +12,7 @@
 	<artifactId>Covid19_Infected_Cases</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Covid19_Infected_Cases</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -22,6 +23,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -68,6 +75,28 @@
 
 	<build>
 		<plugins>
+		<plugin><!-- don't pack the war  -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				 <version>3.2.2</version>
+				<executions>
+					<!-- <execution>
+						<id>default-war</id>
+						<phase>none</phase>
+					</execution> -->
+					<execution>
+						<id>war-exploded</id>
+						<configuration>
+							<webappDirectory>target/deploy</webappDirectory>
+							<archiveClasses>true</archiveClasses>
+						</configuration>
+						<phase>prepare-package</phase>
+						<!-- <goals>
+							<goal>exploded</goal>
+						</goals> -->
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
