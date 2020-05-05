@@ -7,4 +7,5 @@ public class Covid19InfectedCasesApplicationTests {
 	   public void main() {
 		   Covid19InfectedCasesApplication.main(new String[] {});
 	   }
+	   
 	}

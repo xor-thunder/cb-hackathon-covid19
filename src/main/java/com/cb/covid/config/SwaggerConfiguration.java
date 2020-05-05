@@ -22,6 +22,7 @@ public class SwaggerConfiguration {
 				.build();
 	}
 
+//swagger UI
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("COVID19 Status Service API")
 				.description("COVID19 Status Service API reference for developers").version("1.0").build();
